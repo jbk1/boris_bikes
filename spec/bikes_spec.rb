@@ -1,32 +1,22 @@
 require "bike"
 
 describe Bike do
+	# let(:bike) {Bike.new}		#creates a variable for all tests
+	# let(:broken_bike) {Bike.new.break!}
 
-	let(:bike) {Bike.new}		#creates a variable for all tests
-
-	let(:broken_bike) do
-
-		Bike.new.break!
-
+	it 'is initially not broken' do
+		bike = Bike.new 
+		expect(bike.broken?).to be_false
 	end
 
 
-	it 'is not broken' do
+	# it' can break' do
+	# 	expect(broken_bike).to be_broken
+	# end
 
-		expect(bike).not_to be_broken
-	end
-
-	it' can break' do
-
-		expect(broken_bike).to be_broken
-
-	end
-
-	it 'can be fixed' do
-
-		expect(broken_bike.fix!).not_to be_broken
-
-	end
+	# it 'can be fixed' do
+	# 	expect(broken_bike.fix!).not_to be_broken
+	# end
 
 end
 

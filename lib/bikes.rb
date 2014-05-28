@@ -10,7 +10,6 @@ class Bike
 		@broken
 	end
 
-
 	def break!
 		@broken = true
 		self				#refers to the instance of the class		
@@ -20,6 +19,5 @@ class Bike
 		@broken = false
 		self
 	end
-
 
 end

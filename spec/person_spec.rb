@@ -1,32 +1,61 @@
+require 'person'
 
-class Bike
+describe Person do
 
-	def initialize
+	let(:person) {Person.new}
 
-		@broken = false
+	it "has no bike" do
 
-	end
-
-
-	def broken?
-
-		@broken
+		expect(person).not_to have_bike
 
 	end
 
 
-	def break!
+	it 'can have a bike' do
 
-		@broken = true
-		self				#refers to the instance of the class		
+		person = Person.new(:bike)
+
+		expect(person).to have_bike
 
 	end
 
-	def fix!
+	it 'can fall down' do
+		bike = double :bike    				
+		expect(bike).to receive(:break!)
 
-		@broken = false
-		self
+		person = Person.new(bike)
+		person.fall_down
+
 	end
 
+	it "can rent a bike from a statation" do
+
+		station = double :station
+		expect(station).to receive(:release_bike)
+
+
+
+		person.rent_bike_from station
+
+
+	end
+
+
+	it "has a bike after renting one from station" do
+		
+		station = double :station, release_bike: :bike
+		# same as:
+		# station = double :station
+		# expect(station).to receive(:release_bike).and_return(:bike)
+
+		# same as:
+		station = double(:station, {release_bike: :bike})
+
+
+		person.rent_bike_from(station)
+		expect(person).to have_bike
+
+	end
 
 end
+
