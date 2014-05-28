@@ -1,7 +1,7 @@
 class Person
 
-	def initialize
-		@bike = false	
+	def initialize(bike = nil)
+		@bike = bike	
 	end
 
 	def have_bike?
@@ -10,11 +10,19 @@ class Person
 
 	def rent_bike!
 		@bike = true
+		self
 	end
 
 	def return_bike!
 		@bike = false
+		self
 	end
+
+	def break_bike!
+		@bike.break!
+	end
+
+
 
 end
 

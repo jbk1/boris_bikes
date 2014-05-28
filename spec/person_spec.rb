@@ -9,6 +9,7 @@ describe Person do
 	end
 
 	it 'can rent a bike' do
+		person = Person.new(:bike)
 		person.rent_bike!
 		expect(person.have_bike?).to be_true
 	end
@@ -19,7 +20,14 @@ describe Person do
 		expect(person.have_bike?).to be_false
 	end
 
-	
+	it 'can break a bike' do
+		bike = double :bike
+		expect(bike).to receive(:break!)
+		person.rent_bike!
+		person.break_bike!
+
+	end
+
 
 end
 
