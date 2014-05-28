@@ -1,32 +1,77 @@
+require "bike"
 
-class Bike
+describe Bike do
 
-	def initialize
+	let(:bike) {Bike.new}		#creates a variable for all tests
 
-		@broken = false
+	let(:broken_bike) do
 
-	end
-
-
-	def broken?
-
-		@broken
+		Bike.new.break!
 
 	end
 
 
-	def break!
+	it 'is not broken' do
 
-		@broken = true
-		self				#refers to the instance of the class		
+		expect(bike).not_to be_broken
+	end
+
+	it' can break' do
+
+		expect(broken_bike).to be_broken
 
 	end
 
-	def fix!
+	it 'can be fixed' do
 
-		@broken = false
-		self
+		expect(broken_bike.fix!).not_to be_broken
+
 	end
-
 
 end
+
+
+
+
+
+
+
+
+
+
+
+#we're describing the functionality of a specific class, Bike
+
+# describe Bike do
+
+
+  # this is a specific feature (behaviour) 
+  # that we expect to be present
+
+
+  # it "should not be broken after we create it" do
+    # the_bike = Bike.new # initialise a new object of Bike class
+
+
+
+    # expect an instance of this class to have 
+    # a method "broken?" that should return false
+
+	# Expect the method broken? of the object 'bike' to return false
+
+
+
+	# expect(the_bike.broken?).to be_false
+
+
+
+    #same as above with different syntax:
+    # expect(the_bike).not_to be_broken
+
+  # end
+# end
+
+
+
+
+
