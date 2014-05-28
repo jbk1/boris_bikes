@@ -5,6 +5,9 @@ class Bike
 		@broken = false
 	end
 
+	# def broken
+	# 	self.broken
+	# end
 
 	def broken?
 		@broken

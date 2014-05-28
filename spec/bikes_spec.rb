@@ -1,23 +1,26 @@
-require "bike"
+require "bikes"
 
 describe Bike do
-	# let(:bike) {Bike.new}		#creates a variable for all tests
-	# let(:broken_bike) {Bike.new.break!}
+# 
+# this 'let' method initialises a new instance of the 'bike' instance variable that can be called my any method that chooses.
+	let(:bike) {Bike.new}
 
 	it 'is initially not broken' do
-		bike = Bike.new 
-		expect(bike.broken?).to be_false
+		expect(bike).not_to be_broken
+	end
+	# same as:
+
+	it 'can be broken' do
+		bike.break!
+		expect(bike).to be_broken
 	end
 
-
-	# it' can break' do
-	# 	expect(broken_bike).to be_broken
-	# end
-
-	# it 'can be fixed' do
-	# 	expect(broken_bike.fix!).not_to be_broken
-	# end
-
+	it 'can be fixed' do
+		bike.break!
+		bike.fix!
+		expect(bike).not_to be_broken
+	end
+	
 end
 
 
