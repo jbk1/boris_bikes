@@ -22,6 +22,7 @@ class Person
 		@bike.break!
 	end
 
+	
 
 
 end
