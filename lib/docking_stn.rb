@@ -7,7 +7,8 @@ class DockingStation
 
 	def initialize(options = {})
 		# self.capacity is calling the capacity=() method
-		self.capacity = options.fetch(:capacity, capacity)
+		self.capacity=( options.fetch(:capacity, self.capacity() ) )
+		# self.capacity = options.fetch(:capacity, capacity)
 	end
 
 
