@@ -12,10 +12,13 @@ module BikeContainer
 	end
 
 	
-	def capacity=(value)
-		@capacity = value
-	end
+	# def capacity=(value)
+	# 	@capacity = value
+	# end
 
+	attr_writer :capacity	
+
+	
 
 	def bike_count
 		bikes.count

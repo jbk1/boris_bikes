@@ -1,14 +1,12 @@
 require "bikes"
 
 describe Bike do
-# 
 # this 'let' method initialises a new instance of the 'bike' instance variable that can be called my any method that chooses.
 	let(:bike) {Bike.new}
 
 	it 'is initially not broken' do
 		expect(bike).not_to be_broken
 	end
-	# same as:
 
 	it 'can be broken' do
 		bike.break!
@@ -22,15 +20,6 @@ describe Bike do
 	end
 	
 end
-
-
-
-
-
-
-
-
-
 
 
 #we're describing the functionality of a specific class, Bike
