@@ -18,7 +18,6 @@ module BikeContainer
 
 	attr_writer :capacity	
 
-	
 
 	def bike_count
 		bikes.count
@@ -37,7 +36,7 @@ module BikeContainer
 
 
 	def full?
-		bike_count == @capacity
+		bike_count == capacity
 	end
 
 
