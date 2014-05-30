@@ -38,6 +38,6 @@ describe 'docking station' do
 		expect(station.available_bikes).to eq([working_bike])
 	end
 
-
-
 end
+
+# Common functionality between Docking Staion, Garage and Van would be; accepting bikes, counting bikes, releasing bikes, available bikes.
